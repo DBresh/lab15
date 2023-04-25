@@ -1,44 +1,70 @@
-.main{
+.main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* background: rgb(12, 12, 12); */
-    background: black;
-    width: 600px;
+    /* background: black; */
+    width: 700px;
     margin: 0px;
 }
 
-.app{
+.app {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: black; */
+    background: black;
 }
 
-body{
+body {
     margin: 0px;
-    background: rgb(17, 15, 15);
+    /* background: rgb(17, 15, 15); */
 }
 
-.pages{
-    background: red;
+.pages {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    padding: 8px 20px;
+    background: black;
 }
 
-.photo{
+.page {
+    width: 35px;
+    height: 35px;
+    background-color: gray;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selected-page {
+    cursor: default;
+    background-color: rgb(218, 217, 217);
+}
+
+.page:hover {
+    background-color: darkgray;
+}
+
+.photo {
     margin-right: 12px;
     display: flex;
     align-items: center;
 }
 
-.profile-image{
+.profile-image {
     border-radius: 50%;
     height: 56px;
     width: 56px;
 }
 
-.user{
+.user {
     background: black;
     color: white;
     width: 100%;
@@ -47,40 +73,99 @@ body{
     /* margin-bottom: 2px; */
     display: flex;
     transition: transform 0.1s ease-in-out;
-    
 }
 
-.postdiv{
+.postdiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
 }
 
-.post{
+.post {
     /* width: 100%; */
     height: 800px;
-    object-fit:cover;
+    object-fit: cover;
 }
 
-.name{
+.name {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.user:hover{
+.user:hover {
     background: gray;
     cursor: pointer;
     transform: scale(1.05);
 }
 
 .arrow-back {
-    margin-top: 8px;
+    margin-top: 15px;
+    width: 13px;
+    height: 13px;
+    border-top: 10px solid rgb(79, 75, 75);
+    border-right: 10px solid rgb(79, 75, 75);
+    /* margin-right: 60px; */
+    transform: rotate(-135deg);
+}
+
+.arrow-forward {
+    transform: rotate(45deg);
+}
+
+.arrow-back:hover {
+    border-top: 10px solid rgb(157, 150, 150);
+    border-right: 10px solid rgb(157, 150, 150);
+}
+
+.arrow-forward:hover {
+    border-top: 10px solid rgb(157, 150, 150);
+    border-right: 10px solid rgb(157, 150, 150);
+}
+
+.like {
+    width: 20px; 
+    height: 20px; 
+    background-color: white;
+    margin-top: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.like::before,
+.like::after {
+    content : '';
     width: 20px;
     height: 20px;
-    border-top: 10px solid red;
-    border-right: 10px solid red;
-    margin-right: 60px;
-    transform: rotate(-135deg);
-  }
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+.like::before {
+    top: -10px;
+    left: 0;
+}
+.like::after {
+    top: 0;
+    left: -10px;
+}
+
+.likesdiv{
+    display: flex;
+}
+
+.amountOflikes{
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.like-active{
+    background-color: red;
+    
+}
+.like-active::after, .like-active::before{
+    background-color: red;
+
+}
